@@ -36,11 +36,6 @@
     NSLog(@"PreRoll播完");
 }
 
--(void)onFailedToVast
-{
-    NSLog(@"PreRoll Vast 有誤");
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

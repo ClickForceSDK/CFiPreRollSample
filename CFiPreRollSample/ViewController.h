@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MFPreRollView.h"
+#import <iMFAD/iMFAD.h>
 
 @interface ViewController : UIViewController<MFPreRollDelegate>
 {

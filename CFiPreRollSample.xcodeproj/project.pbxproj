@@ -16,9 +16,10 @@
 		2221A0051F205D290027258F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2221A0031F205D290027258F /* LaunchScreen.storyboard */; };
 		2221A0101F205D290027258F /* CFiPreRollSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221A00F1F205D290027258F /* CFiPreRollSampleTests.m */; };
 		2221A01B1F205D290027258F /* CFiPreRollSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221A01A1F205D290027258F /* CFiPreRollSampleUITests.m */; };
-		2221A0A31F207B400027258F /* libiMFAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2221A0A21F207B400027258F /* libiMFAd.a */; };
 		2221A0A61F207B6C0027258F /* GoogleInteractiveMediaAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2221A0A51F207B6C0027258F /* GoogleInteractiveMediaAds.framework */; };
 		2221A0A71F207B6C0027258F /* GoogleInteractiveMediaAds.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2221A0A51F207B6C0027258F /* GoogleInteractiveMediaAds.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		226D39601F6B6D8700C70C77 /* iMFAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D395F1F6B6D8700C70C77 /* iMFAD.framework */; };
+		226D39611F6B6D8700C70C77 /* iMFAD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 226D395F1F6B6D8700C70C77 /* iMFAD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				226D39611F6B6D8700C70C77 /* iMFAD.framework in Embed Frameworks */,
 				2221A0A71F207B6C0027258F /* GoogleInteractiveMediaAds.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -70,9 +72,9 @@
 		2221A0161F205D290027258F /* CFiPreRollSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFiPreRollSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2221A01A1F205D290027258F /* CFiPreRollSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFiPreRollSampleUITests.m; sourceTree = "<group>"; };
 		2221A01C1F205D290027258F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2221A0A21F207B400027258F /* libiMFAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiMFAd.a; sourceTree = "<group>"; };
-		2221A0A41F207B510027258F /* MFPreRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPreRollView.h; sourceTree = "<group>"; };
 		2221A0A51F207B6C0027258F /* GoogleInteractiveMediaAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInteractiveMediaAds.framework; sourceTree = "<group>"; };
+		226D395D1F6B6D6C00C70C77 /* iMFAD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iMFAD.framework; path = "../../../SDk-Version/iOS/20170911(PreRoll)/iMFAD.framework"; sourceTree = "<group>"; };
+		226D395F1F6B6D8700C70C77 /* iMFAD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iMFAD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D39601F6B6D8700C70C77 /* iMFAD.framework in Frameworks */,
 				2221A0A61F207B6C0027258F /* GoogleInteractiveMediaAds.framework in Frameworks */,
-				2221A0A31F207B400027258F /* libiMFAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,7 @@
 		22219FE61F205D290027258F = {
 			isa = PBXGroup;
 			children = (
+				226D395F1F6B6D8700C70C77 /* iMFAD.framework */,
 				2221A0A51F207B6C0027258F /* GoogleInteractiveMediaAds.framework */,
 				22219FF11F205D290027258F /* CFiPreRollSample */,
 				2221A00E1F205D290027258F /* CFiPreRollSampleTests */,
@@ -127,8 +130,6 @@
 		22219FF11F205D290027258F /* CFiPreRollSample */ = {
 			isa = PBXGroup;
 			children = (
-				2221A0A21F207B400027258F /* libiMFAd.a */,
-				2221A0A41F207B510027258F /* MFPreRollView.h */,
 				22219FF51F205D290027258F /* AppDelegate.h */,
 				22219FF61F205D290027258F /* AppDelegate.m */,
 				22219FF81F205D290027258F /* ViewController.h */,
@@ -172,6 +173,7 @@
 		2221A0A91F207BA20027258F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				226D395D1F6B6D6C00C70C77 /* iMFAD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
