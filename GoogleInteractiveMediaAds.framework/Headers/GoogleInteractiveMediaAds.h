@@ -8,10 +8,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-//! Project version number for GoogleInteractiveMediaAds.
+/**
+ * Project version number for GoogleInteractiveMediaAds.
+ */
 FOUNDATION_EXPORT double GoogleInteractiveMediaAdsVersionNumber;
 
-//! Project version string for GoogleInteractiveMediaAds.
+/**
+ * Project version string for GoogleInteractiveMediaAds.
+ */
 FOUNDATION_EXPORT const unsigned char GoogleInteractiveMediaAdsVersionString[];
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
@@ -39,5 +43,6 @@ FOUNDATION_EXPORT const unsigned char GoogleInteractiveMediaAdsVersionString[];
 #import <GoogleInteractiveMediaAds/IMAStreamManager.h>
 #import <GoogleInteractiveMediaAds/IMAStreamRequest.h>
 #import <GoogleInteractiveMediaAds/IMAUiElements.h>
+#import <GoogleInteractiveMediaAds/IMAUniversalAdID.h>
 #import <GoogleInteractiveMediaAds/IMAVODStreamRequest.h>
 #import <GoogleInteractiveMediaAds/IMAVideoDisplay.h>

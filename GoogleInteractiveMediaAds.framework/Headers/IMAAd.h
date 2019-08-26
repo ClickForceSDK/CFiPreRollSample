@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 #import "IMAAdPodInfo.h"
+#import "IMAUniversalAdID.h"
 
 /**
  *  Data object representing a single ad.
@@ -50,23 +51,46 @@
 @property(nonatomic, readonly) NSTimeInterval duration;
 
 /**
- *  The UI elements that will be displayed during ad playback.
+ *  The <a href="../Enums/IMAUiElementType.html">UI elements</a> that will be displayed during ad
+ *  playback.
  */
-@property(nonatomic, copy, readonly) NSArray *uiElements;
+
+@property(nonatomic, copy, readonly) NSArray<NSNumber *> *uiElements;
+
+/**
+ *  Whether or not the ad UI will be disabled for this ad.
+ *  :nodoc:
+ */
+@property(nonatomic, readonly, getter=isUiDisabled) BOOL uiDisabled;
 
 /**
  *  The width of the ad asset. For non-linear ads, this is the actual width
  *  of the ad representation. For linear ads, since they scale seamlessly, we
  *  currently return 0 for width.
  */
-@property(nonatomic, readonly) int width;
+@property(nonatomic, readonly) NSInteger width;
 
 /**
  *  The height of the ad asset. For non-linear ads, this is the actual height
  *  of the ad representation. For linear ads, since they scale seamlessly, we
  *  currently return 0 for height.
  */
-@property(nonatomic, readonly) int height;
+@property(nonatomic, readonly) NSInteger height;
+
+/**
+ *  The width of the selected creative as specified in the VAST response.
+ */
+@property(nonatomic, readonly) NSInteger VASTMediaWidth;
+
+/**
+ *  The height of the selected creative as specified in the VAST response.
+ */
+@property(nonatomic, readonly) NSInteger VASTMediaHeight;
+
+/**
+ *  The bitrate of the selected creative as specified in the VAST response.
+ */
+@property(nonatomic, readonly) NSInteger VASTMediaBitrate;
 
 /**
  *  Specifies whether the ad is linear or non-linear.
@@ -77,6 +101,12 @@
  *  Specifies whether the ad is skippable.
  */
 @property(nonatomic, readonly, getter=isSkippable) BOOL skippable;
+
+/**
+ *  The number of seconds of playback before the ad becomes skippable. -1 is returned for non
+ *  skippable ads or if this is unavailable.
+ */
+@property(nonatomic, readonly) NSTimeInterval skipTimeOffset;
 
 /**
  *  Set of ad podding properties.
@@ -100,16 +130,24 @@
 @property(nonatomic, copy, readonly) NSString *creativeAdID;
 
 /**
+ *  The list of all UniversalAdIds of the selected creative for this ad. Returns an empty array if
+ *  no universal ad IDs are found.
+ */
+@property(nonatomic, copy, readonly) NSArray<IMAUniversalAdID *> *universalAdIDs;
+
+/**
  *  The UniversalAdId of the selected creative for the ad. Returns the id value or "unknown"
  *  if unavailable.
  */
-@property(nonatomic, copy, readonly) NSString *universalAdIdValue;
+@property(nonatomic, copy, readonly)
+    NSString *universalAdIdValue DEPRECATED_MSG_ATTRIBUTE("Use universalAdIDs instead.");
 
 /**
  *  The registry associated with cataloging the UniversalAdId of the selected creative for the ad.
  *  Returns the registry value, or "unknown" if unavailable.
  */
-@property(nonatomic, copy, readonly) NSString *universalAdIdRegistry;
+@property(nonatomic, copy, readonly)
+    NSString *universalAdIdRegistry DEPRECATED_MSG_ATTRIBUTE("Use universalAdIDs instead.");
 
 /**
  *  The advertiser name as defined by the serving party.
@@ -128,6 +166,11 @@
 @property(nonatomic, copy, readonly) NSString *dealID;
 
 /**
+ *  The IDs of the ads, starting with the first wrapper ad.
+ */
+@property(nonatomic, copy, readonly) NSArray<NSString *> *wrapperAdIDs;
+
+/**
  *  The IDs of the ads' creatives, starting with the first wrapper ad.
  */
 @property(nonatomic, copy, readonly) NSArray<NSString *> *wrapperCreativeIDs;
@@ -138,7 +181,9 @@
  */
 @property(nonatomic, copy, readonly) NSArray<NSString *> *wrapperSystems;
 
-
+/**
+ * :nodoc:
+ */
 - (instancetype)init NS_UNAVAILABLE;
 
 @end
