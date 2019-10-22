@@ -44,5 +44,5 @@
 #pragma mark - 關閉Pre-roll 影片
 -(void)closePrerollVideo;
 
-
++(NSString *)version;
 @end
