@@ -23,7 +23,7 @@
     preroll = [[MFPreRollView alloc]initWithFrame:self.prerollview.frame];
     [preroll getView:self];
     [preroll setIsFull:YES];
-    [preroll setPreRollZoneID:@"4397"];
+    [preroll setPreRollZoneID:@"4397"]; //請輸入您的ZoneId
     [preroll setDelegate:self];
     [preroll setPreRollPlayer];
     
@@ -36,6 +36,9 @@
     NSLog(@"PreRoll播完");
 }
 
+- (void)onFailedToVast {
+    NSLog(@"PreRoll播放失敗");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
