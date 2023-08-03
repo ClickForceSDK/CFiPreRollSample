@@ -44,5 +44,9 @@
 #pragma mark - 關閉Pre-roll 影片
 -(void)closePrerollVideo;
 
+#pragma mark - Multiple Settings
+-(void)setPreRollZoneID:(NSString *)zoneID getViewController:(UIViewController *)view setIsFullScreen:(BOOL)isFull;
+
+#pragma mark - 檢查IMA版版＆MFSDK版本
 +(NSString *)version;
 @end
